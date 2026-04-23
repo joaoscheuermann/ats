@@ -90,7 +90,7 @@ fn render_work_experience(jobs: &[Job]) -> Option<String> {
 
 fn render_job(job: &Job) -> String {
     let mut out = format!(
-        "**{}** | **{}**\n{} | {} \u{2013} {}",
+        "### {} | {}\n{} | {} \u{2013} {}",
         job.job_title, job.company_name, job.location, job.start_date, job.end_date
     );
     for bullet in &job.bullets {
@@ -256,9 +256,8 @@ mod tests {
             year: "2022".into(),
         }];
         let rendered = render_baseline(&r);
-        assert!(rendered.contains(
-            "## Education\n\n\n**BSc in CS**\nState University, City, ST | 05/2014"
-        ));
+        assert!(rendered
+            .contains("## Education\n\n\n**BSc in CS**\nState University, City, ST | 05/2014"));
         assert!(rendered.contains(
             "## Certifications\n* **AWS Certified Solutions Architect**, Amazon Web Services, 2022"
         ));

@@ -14,14 +14,16 @@
 
 ## Work Experience
 
-**[Standard Industry Job Title]** | **[Company Name]**
+### **[Standard Industry Job Title]** | **[Company Name]**
+
 [City, State] | [MM/YYYY] – [MM/YYYY or Present]
 
 - [Action Verb] [Task/Project] using [Relevant Keyword/Tool] to achieve [Quantifiable Result/Metric].
 - [Action Verb] [Task/Project] using [Relevant Keyword/Tool] to achieve [Quantifiable Result/Metric].
 - [Action Verb] [Task/Project] using [Relevant Keyword/Tool] to achieve [Quantifiable Result/Metric].
 
-**[Standard Industry Job Title]** | **[Company Name]**
+### **[Standard Industry Job Title]** | **[Company Name]**
+
 [City, State] | [MM/YYYY] – [MM/YYYY]
 
 - [Action Verb] [Task/Project] using [Relevant Keyword/Tool] to achieve [Quantifiable Result/Metric].

@@ -8,7 +8,12 @@ use markdown2pdf::config::ConfigSource;
 
 const PDF_MAGIC: &[u8] = b"%PDF-";
 
-/// Renders styled PDFs with the crate’s default configuration.
+/// Embedded TOML styling shipped with the crate. Compiled in so rendering is
+/// deterministic and does not depend on `~/markdown2pdfrc.toml` or any file
+/// on the user’s machine.
+const RESUME_STYLE_TOML: &str = include_str!("resume_style.toml");
+
+/// Renders styled PDFs using the embedded resume style configuration.
 pub struct Markdown2PdfWriter;
 
 impl Markdown2PdfWriter {
@@ -39,7 +44,7 @@ impl PdfWriter for Markdown2PdfWriter {
         if let Err(e) = markdown2pdf::parse_into_file(
             markdown.to_string(),
             &path_str,
-            ConfigSource::Default,
+            ConfigSource::Embedded(RESUME_STYLE_TOML),
             None,
         ) {
             let _ = fs::remove_file(&tmp);

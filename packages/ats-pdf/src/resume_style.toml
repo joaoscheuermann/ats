@@ -1,0 +1,202 @@
+# ats-pdf resume styling for `markdown2pdf` 0.2.x
+#
+# Loaded at compile time via `include_str!` and passed as
+# `ConfigSource::Embedded(...)`. Every field documented by the upstream
+# example (`markdown2pdfrc.example.toml`) is set explicitly so the rendered
+# PDF is deterministic across environments and does not depend on any
+# `~/markdown2pdfrc.toml` the user may happen to have.
+#
+# Common fields per section:
+#   size             Font size in points.
+#   textcolor        RGB text color (0-255) as { r, g, b }.
+#   backgroundcolor  RGB background color (0-255) as { r, g, b }.
+#   beforespacing    Vertical gap BEFORE the element, as a multiple of the
+#                    document line height (genpdfi Break “lines”, not points).
+#   afterspacing     Vertical gap AFTER the element, same units as beforespacing.
+#                    Values like 1.0 ≈ one blank line; 3.0 ≈ three blank lines.
+#   alignment        "left" | "center" | "right" | "justify".
+#   fontfamily       Font family name (e.g. "helvetica").
+#   bold             Enable bold text.
+#   italic           Enable italic text.
+#   underline        Enable underlined text.
+#   strikethrough    Enable strikethrough text.
+#
+# Design intent: ATS-friendly single-column resume. Plain Helvetica,
+# high-contrast black on white, modest font sizes, generous margins,
+# no exotic glyphs or decorations that can confuse parsers.
+
+# Page margins in points (1 inch = 72 pt). Sides are wider than top/bottom so
+# the text block has more breathing room at the left and right edges.
+[margin]
+top = 24.0
+right = 24.0
+bottom = 24.0
+left = 24.0
+
+# H1 — candidate name / document title.
+[heading.1]
+size = 20
+textcolor = { r = 17, g = 17, b = 17 }
+backgroundcolor = { r = 255, g = 255, b = 255 }
+beforespacing = 0.0
+afterspacing = 0.28
+alignment = "left"
+fontfamily = "helvetica"
+bold = true
+italic = false
+underline = false
+strikethrough = false
+
+# H2 — top-level resume sections (Experience, Education, Skills, …).
+[heading.2]
+size = 14
+textcolor = { r = 17, g = 17, b = 17 }
+backgroundcolor = { r = 255, g = 255, b = 255 }
+beforespacing = 0.55
+afterspacing = 0.35
+alignment = "left"
+fontfamily = "helvetica"
+bold = true
+italic = false
+underline = false
+strikethrough = false
+
+# H3 — role / company / sub-section titles.
+[heading.3]
+size = 12
+textcolor = { r = 34, g = 34, b = 34 }
+backgroundcolor = { r = 255, g = 255, b = 255 }
+beforespacing = 0.55
+afterspacing = 0.35
+alignment = "left"
+fontfamily = "helvetica"
+bold = true
+italic = false
+underline = false
+strikethrough = false
+
+# Italic emphasis (*text* or _text_).
+[emphasis]
+size = 10
+textcolor = { r = 34, g = 34, b = 34 }
+backgroundcolor = { r = 255, g = 255, b = 255 }
+beforespacing = 0.0
+afterspacing = 0.0
+alignment = "left"
+fontfamily = "helvetica"
+bold = false
+italic = true
+underline = false
+strikethrough = false
+
+# Bold emphasis (**text** or __text__).
+[strong_emphasis]
+size = 10
+textcolor = { r = 17, g = 17, b = 17 }
+backgroundcolor = { r = 255, g = 255, b = 255 }
+beforespacing = 0.0
+afterspacing = 0.0
+alignment = "left"
+fontfamily = "helvetica"
+bold = true
+italic = false
+underline = false
+strikethrough = false
+
+# Inline code and fenced code blocks.
+[code]
+size = 11
+textcolor = { r = 34, g = 34, b = 34 }
+backgroundcolor = { r = 245, g = 245, b = 245 }
+beforespacing = 0.2
+afterspacing = 0.2
+alignment = "left"
+fontfamily = "helvetica"
+bold = false
+italic = false
+underline = false
+strikethrough = false
+
+# Block quotes (> text) — used sparingly for pull quotes.
+[block_quote]
+size = 10
+textcolor = { r = 68, g = 68, b = 68 }
+backgroundcolor = { r = 250, g = 250, b = 250 }
+beforespacing = 0.35
+afterspacing = 0.35
+alignment = "left"
+fontfamily = "helvetica"
+bold = false
+italic = true
+underline = false
+strikethrough = false
+
+# List items (- / * / 1.) — the workhorse of resume bullets.
+[list_item]
+size = 10
+textcolor = { r = 17, g = 17, b = 17 }
+backgroundcolor = { r = 255, g = 255, b = 255 }
+beforespacing = 0.0
+afterspacing = 0.18
+alignment = "left"
+fontfamily = "helvetica"
+bold = false
+italic = false
+underline = false
+strikethrough = false
+
+# Hyperlinks.
+[link]
+size = 10
+textcolor = { r = 0, g = 85, b = 170 }
+backgroundcolor = { r = 255, g = 255, b = 255 }
+beforespacing = 0.0
+afterspacing = 0.0
+alignment = "left"
+fontfamily = "helvetica"
+bold = false
+italic = false
+underline = true
+strikethrough = false
+
+# Image caption / alt text.
+[image]
+size = 11
+textcolor = { r = 85, g = 85, b = 85 }
+backgroundcolor = { r = 255, g = 255, b = 255 }
+beforespacing = 0.0
+afterspacing = 0.0
+alignment = "center"
+fontfamily = "helvetica"
+bold = false
+italic = true
+underline = false
+strikethrough = false
+
+# Regular paragraph text — the resume body default.
+[text]
+size = 10
+textcolor = { r = 17, g = 17, b = 17 }
+backgroundcolor = { r = 255, g = 255, b = 255 }
+beforespacing = 0.0
+afterspacing = 0.2
+alignment = "left"
+fontfamily = "helvetica"
+bold = false
+italic = false
+underline = false
+strikethrough = false
+
+# Horizontal rules (---).
+[horizontal_rule]
+size = 10
+textcolor = { r = 204, g = 204, b = 204 }
+backgroundcolor = { r = 255, g = 255, b = 255 }
+beforespacing = 0.35
+afterspacing = 0.35
+alignment = "left"
+fontfamily = "helvetica"
+bold = false
+italic = false
+underline = false
+strikethrough = false
