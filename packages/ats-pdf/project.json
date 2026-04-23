@@ -1,0 +1,50 @@
+{
+  "name": "ats-pdf",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/ats-pdf/src",
+  "targets": {
+    "build": {
+      "executor": "@monodon/rust:build",
+      "outputs": ["{options.target-dir}"],
+      "options": {
+        "target-dir": "dist/target/ats-pdf"
+      },
+      "configurations": {
+        "release": {
+          "release": true
+        }
+      }
+    },
+    "test": {
+      "cache": true,
+      "executor": "@monodon/rust:test",
+      "outputs": ["{options.target-dir}"],
+      "options": {
+        "target-dir": "dist/target/ats-pdf"
+      },
+      "configurations": {
+        "production": {
+          "release": true
+        }
+      }
+    },
+    "lint": {
+      "cache": true,
+      "executor": "@monodon/rust:lint",
+      "outputs": ["{options.target-dir}"],
+      "options": {
+        "target-dir": "dist/target/ats-pdf"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "dependsOn": [],
+      "options": {
+        "command": "cargo clean",
+        "cwd": "{projectRoot}"
+      }
+    }
+  },
+  "tags": ["rust", "lib"]
+}

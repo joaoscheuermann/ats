@@ -1,0 +1,26 @@
+cv:
+  personal_information:
+    full_name: "Sam Example"
+    email: "sam@example.com"
+    phone: "+1 555-9999"
+    linkedin_url: "https://linkedin.com/in/sam"
+    location: "Austin, TX"
+  professional_summary: "Engineer focused on reliability."
+  skills:
+    - category: "Tools"
+      items: ["Rust", "PostgreSQL"]
+  work_experience:
+    - job_title: "Principal Engineer"
+      company_name: "Acme"
+      location: "Austin, TX"
+      start_date: "03/2023"
+      end_date: "Present"
+      bullets:
+        - "Owned the reliability roadmap across four product teams."
+    - job_title: "Senior Engineer"
+      company_name: "Globex"
+      location: "Remote"
+      start_date: "01/2019"
+      end_date: "02/2023"
+      bullets:
+        - "Shipped the observability platform used by 400 engineers."

@@ -1,0 +1,5 @@
+{
+  "yaml.schemas": {
+    "packages/ats-core/assets/yaml_schema.json": ["release/resume.yaml"]
+  }
+}

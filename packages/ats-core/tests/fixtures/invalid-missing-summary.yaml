@@ -1,0 +1,7 @@
+cv:
+  personal_information:
+    full_name: "Jane Doe"
+    email: "jane@example.com"
+    phone: "+1 555-0100"
+    linkedin_url: "https://linkedin.com/in/jane"
+    location: "Remote"

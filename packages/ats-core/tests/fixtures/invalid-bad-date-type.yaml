@@ -1,0 +1,23 @@
+cv:
+  personal_information:
+    full_name: "Jane Doe"
+    email: "jane@example.com"
+    phone: "+1 555-0100"
+    linkedin_url: "https://linkedin.com/in/jane"
+    location: "Remote"
+  professional_summary: "Summary text."
+  work_experience:
+    - job_title: "Engineer"
+      company_name: "Acme"
+      location: "Remote"
+      start_date: "01/2023"
+      end_date: "Present"
+      bullets:
+        - "Did a thing."
+    - job_title: "Engineer"
+      company_name: "Globex"
+      location: "Remote"
+      start_date: 12345
+      end_date: "04/2026"
+      bullets:
+        - "Did another thing."

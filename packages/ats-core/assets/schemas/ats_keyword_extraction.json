@@ -1,0 +1,90 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "ats_keyword_extraction",
+    "description": "Structured extraction, categorization, and ranking of ATS keywords from a job description.",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "hard_skills_and_tools": {
+          "type": "array",
+          "description": "Technical skills, programming languages, methodologies, and software platforms.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "primary_term": { "type": "string", "description": "The exact wording used in the job description." },
+              "acronym": { "type": "string", "description": "The abbreviation or fully spelled out version, if applicable." },
+              "semantic_cluster": { "type": "string", "description": "The overarching concept or taxonomy group this term belongs to." },
+              "importance_score": { "type": "integer", "description": "A 1-10 weight score based on frequency and placement." }
+            },
+            "required": ["primary_term", "acronym", "semantic_cluster", "importance_score"],
+            "additionalProperties": false
+          }
+        },
+        "soft_skills_and_competencies": {
+          "type": "array",
+          "description": "Behavioral traits, leadership indicators, and working styles.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "primary_term": { "type": "string" },
+              "semantic_cluster": { "type": "string" },
+              "importance_score": { "type": "integer" }
+            },
+            "required": ["primary_term", "semantic_cluster", "importance_score"],
+            "additionalProperties": false
+          }
+        },
+        "industry_specific_terminology": {
+          "type": "array",
+          "description": "Specialized jargon, performance metrics, and regulatory frameworks.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "primary_term": { "type": "string" },
+              "acronym": { "type": "string" },
+              "importance_score": { "type": "integer" }
+            },
+            "required": ["primary_term", "acronym", "importance_score"],
+            "additionalProperties": false
+          }
+        },
+        "certifications_and_credentials": {
+          "type": "array",
+          "description": "Required licenses, degrees, or professional certifications.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "primary_term": { "type": "string" },
+              "importance_score": { "type": "integer" }
+            },
+            "required": ["primary_term", "importance_score"],
+            "additionalProperties": false
+          }
+        },
+        "job_titles_and_seniority": {
+          "type": "array",
+          "description": "Exact role titles and leadership scope indicators.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "primary_term": { "type": "string" },
+              "importance_score": { "type": "integer" }
+            },
+            "required": ["primary_term", "importance_score"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "hard_skills_and_tools",
+        "soft_skills_and_competencies",
+        "industry_specific_terminology",
+        "certifications_and_credentials",
+        "job_titles_and_seniority"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ats.local/schemas/yaml_contract.json",
+  "title": "ATS resume YAML contract",
+  "description": "Strict JSON Schema for the YAML input consumed by `ats render` / `ats run`. AC-1.3: only `cv.personal_information` (as a full block) and `cv.professional_summary` are required; every other field/section/bullet is optional and is simply omitted from the Markdown when absent.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["cv"],
+  "properties": {
+    "cv": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["personal_information", "professional_summary"],
+      "properties": {
+        "personal_information": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["full_name", "email", "phone", "linkedin_url", "location"],
+          "properties": {
+            "full_name": { "type": "string", "minLength": 1 },
+            "email": { "type": "string", "minLength": 1 },
+            "phone": { "type": "string", "minLength": 1 },
+            "linkedin_url": { "type": "string", "minLength": 1 },
+            "location": { "type": "string", "minLength": 1 }
+          }
+        },
+        "professional_summary": { "type": "string", "minLength": 1 },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "category": { "type": "string" },
+              "items": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "work_experience": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "job_title": { "type": "string" },
+              "company_name": { "type": "string" },
+              "location": { "type": "string" },
+              "start_date": { "type": "string" },
+              "end_date": { "type": "string" },
+              "bullets": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "education": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "degree_name": { "type": "string" },
+              "institution": { "type": "string" },
+              "location": { "type": "string" },
+              "graduation_date": { "type": "string" }
+            }
+          }
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string" },
+              "issuing_organization": { "type": "string" },
+              "year": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

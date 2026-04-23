@@ -1,0 +1,53 @@
+cv:
+  personal_information:
+    full_name: "Jane Doe"
+    email: "jane@example.com"
+    phone: "+1 555-0100"
+    linkedin_url: "https://linkedin.com/in/jane"
+    location: "Seattle, WA"
+
+  professional_summary: >
+    Senior backend engineer with 8 years of experience delivering high-availability
+    distributed systems. Led platform modernizations that reduced infrastructure
+    spend by double digits while improving reliability.
+
+  skills:
+    - category: "Technical Skills"
+      items: ["Rust", "Go", "Python", "TypeScript"]
+    - category: "Frameworks & Tools"
+      items: ["Kubernetes", "Terraform", "PostgreSQL", "Redis"]
+    - category: "Methodologies"
+      items: ["Distributed Systems", "Observability", "Incident Response"]
+
+  work_experience:
+    - job_title: "Staff Backend Engineer"
+      company_name: "Acme Corp"
+      location: "Seattle, WA"
+      start_date: "03/2022"
+      end_date: "04/2026"
+      bullets:
+        - "Led migration of the billing platform to a service mesh, reducing p99 latency by 37%."
+        - "Designed and shipped a multi-region event pipeline handling 12B events per day."
+        - "Mentored 4 engineers through promotions to senior."
+    - job_title: "Senior Software Engineer"
+      company_name: "Globex"
+      location: "Remote"
+      start_date: "06/2018"
+      end_date: "02/2022"
+      bullets:
+        - "Built a Rust-based ingestion service that replaced a legacy Java pipeline, cutting cost by 45%."
+        - "Introduced SLO-based alerting; reduced pager volume by 60% over two quarters."
+
+  education:
+    - degree_name: "Bachelor of Science in Computer Science"
+      institution: "University of Washington"
+      location: "Seattle, WA"
+      graduation_date: "06/2016"
+
+  certifications:
+    - title: "Certified Kubernetes Administrator (CKA)"
+      issuing_organization: "CNCF"
+      year: "2023"
+    - title: "AWS Certified Solutions Architect - Professional"
+      issuing_organization: "Amazon Web Services"
+      year: "2022"

@@ -1,0 +1,50 @@
+{
+  "name": "ats-core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/ats-core/src",
+  "targets": {
+    "build": {
+      "executor": "@monodon/rust:build",
+      "outputs": ["{options.target-dir}"],
+      "options": {
+        "target-dir": "dist/target/ats-core"
+      },
+      "configurations": {
+        "release": {
+          "release": true
+        }
+      }
+    },
+    "test": {
+      "cache": true,
+      "executor": "@monodon/rust:test",
+      "outputs": ["{options.target-dir}"],
+      "options": {
+        "target-dir": "dist/target/ats-core"
+      },
+      "configurations": {
+        "production": {
+          "release": true
+        }
+      }
+    },
+    "lint": {
+      "cache": true,
+      "executor": "@monodon/rust:lint",
+      "outputs": ["{options.target-dir}"],
+      "options": {
+        "target-dir": "dist/target/ats-core"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "dependsOn": [],
+      "options": {
+        "command": "cargo clean",
+        "cwd": "{projectRoot}"
+      }
+    }
+  },
+  "tags": ["rust", "lib"]
+}

@@ -1,0 +1,18 @@
+[package]
+name = "ats-pdf"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "Markdown-to-PDF adapter (placeholder for Effort 06)."
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+ats-core = { path = "../ats-core" }
+markdown2pdf = "0.2"
+
+[dev-dependencies]
+tempfile = { workspace = true }

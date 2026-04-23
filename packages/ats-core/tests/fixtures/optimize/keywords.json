@@ -1,0 +1,36 @@
+{
+  "hard_skills_and_tools": [
+    {
+      "primary_term": "Widget",
+      "acronym": "",
+      "semantic_cluster": "tools",
+      "importance_score": 9
+    }
+  ],
+  "soft_skills_and_competencies": [
+    {
+      "primary_term": "Zeta",
+      "semantic_cluster": "general",
+      "importance_score": 3
+    }
+  ],
+  "industry_specific_terminology": [
+    {
+      "primary_term": "Yotta",
+      "acronym": "",
+      "importance_score": 4
+    }
+  ],
+  "certifications_and_credentials": [
+    {
+      "primary_term": "Kappa",
+      "importance_score": 2
+    }
+  ],
+  "job_titles_and_seniority": [
+    {
+      "primary_term": "Lambda",
+      "importance_score": 5
+    }
+  ]
+}

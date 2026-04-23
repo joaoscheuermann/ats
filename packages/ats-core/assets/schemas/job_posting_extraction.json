@@ -1,0 +1,23 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "job_posting_extraction",
+    "description": "Structured extraction of a job posting from rendered HTML into a title plus Markdown-formatted description.",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The exact job title as it appears on the page. Empty string if no title is present."
+        },
+        "markdown": {
+          "type": "string",
+          "description": "The extracted job posting content formatted as clean Markdown. Uses '##' headings for sections, bullet points for lists, and excludes HTML tags, tables, images, and links."
+        }
+      },
+      "required": ["title", "markdown"],
+      "additionalProperties": false
+    }
+  }
+}

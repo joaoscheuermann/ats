@@ -1,0 +1,27 @@
+[package]
+name = "ats-scrape"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "chromiumoxide-backed PageScraper adapter for the ats CLI."
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+ats-core = { path = "../ats-core" }
+
+async-trait = { workspace = true }
+chromiumoxide = { version = "0.8", default-features = false, features = ["tokio-runtime", "bytes"] }
+futures = "0.3"
+tempfile = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+url = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["macros", "rt-multi-thread", "net", "time", "io-util"] }
+wiremock = { workspace = true }
